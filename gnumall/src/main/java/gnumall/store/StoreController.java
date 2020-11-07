@@ -41,7 +41,7 @@ public class StoreController {
 		logger.info("Hello Store");
 		logger.info("session ID : " + request.getRequestedSessionId());
 		logger.info("{}", paramMap);
-
+		logger.info("{}", paramMap);
 
 		List<CamelMap> resultList = new ArrayList<CamelMap>();
 		
