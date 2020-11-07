@@ -1,5 +1,6 @@
 package gnumall.store;
 
+import gnumall.common.util.CamelMap;
 import gnumall.common.util.DataMap;
 import gnumall.common.util.HttpUtil;
 import gnumall.store.service.StoreService;
@@ -42,20 +43,24 @@ public class StoreController {
 		logger.info("{}", paramMap);
 
 
+		List<CamelMap> resultList = new ArrayList<CamelMap>();
+		
+		
+		
 		// 상품 갯수 가져오기
 
 		// 상품정보 받아오기
 		try {
-			logger.info("showProduct 쿼리 실행 결과 : " +
-					Arrays.toString(storeService
-							.showProduct()
-							.toArray()
-					));
+			resultList = storeService.showProduct();
+			logger.info("showProduct 쿼리 실행 결과 : ");
+			resultList.forEach((temp)->{
+				logger.info("{}", temp);
+			});
 		} catch (Exception e) {
 			logger.error("게시물 조회 오류 : {}", e);
 		}
 
-
+		model.addAttribute("list", resultList);
 		return "/content/store";
 	}
 }

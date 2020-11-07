@@ -16,22 +16,29 @@
 
 
 		<ul class="grid-layout three-col">
-			<li>
+
+			<li th:each="p: ${list}">
 				<div class="services-box">
 					<div>
-						<a href="http://watches.zak.kr/shop/item.php?it_id=1562430992"><img
-							src="http://watches.zak.kr/data/item/1562430992/thumb-1_380x266.jpg"
+						<a href="http://watches.zak.kr/shop/item.php?it_id=1562430992">
+						<img th:src="*{'data:image/png;base64,'+ p.pThumnail}"
 							style="width: 100%;"></a>
 					</div>
 					<div class="best_title">
 						<h2>
-							<a href="http://watches.zak.kr/shop/item.php?it_id=1562430992">[TORSO]
-								토르소 심플 라인 손목시계 T21 (색상/남,녀 택1)</a>
+							<a th:text=${p.pName}
+								href="http://watches.zak.kr/shop/item.php?it_id=1562430992"></a>
 						</h2>
 					</div>
 					<div class="best_subtitle">
-						<span class="title-price">₩ 69,000</span> <span
-							class="title-price line-through">₩ <strike>69,000</strike></span>
+						<span th:if="${p.eventPrice} != null"  class="title-price">₩ <a
+							th:text=${p.eventPrice} class="title-price"></a> <span
+							class="title-price line-through">₩ <strike
+								th:text=${p.actualPrice}></strike>
+						</span>
+						</span> <span th:unless="${p.eventPrice} != null" class="title-price">₩ <a
+							th:text=${p.actualPrice} class="title-price"></a>
+						</span>
 					</div>
 					<div class="product-info">dfsdf</div>
 					<div class="sct_sns">
@@ -49,271 +56,9 @@
 						view</button>
 				</div>
 			</li>
-			<li>
-				<div class="services-box">
-					<div>
-						<a href="http://watches.zak.kr/shop/item.php?it_id=1562430676"><img
-							src="http://watches.zak.kr/data/item/1562430676/thumb-1_380x266.jpg"
-							style="width: 100%;"></a>
-					</div>
-					<div class="best_title">
-						<h2>
-							<a href="http://watches.zak.kr/shop/item.php?it_id=1562430676">[TORSO]
-								토르소 심플 라인 메쉬 T23 (색상/ 남,녀 택1)</a>
-						</h2>
-					</div>
-					<div class="best_subtitle">
-						<span class="title-price">₩ 198,000</span> <span
-							class="title-price line-through">₩ <strike>198,000</strike></span>
-					</div>
-					<div class="product-info"></div>
-					<div class="sct_sns">
-						<div class="socials colors-icon">
-							<a href="#" class="facebook"><i class="fa fa-facebook"
-								aria-hidden="true"></i></a> <a href="#" class="twitter"><i
-								class="fa fa-twitter" aria-hidden="true"></i></a> <a href="#"
-								class="gplus"><i class="fa fa-google-plus"
-								aria-hidden="true"></i></a>
 
-						</div>
-					</div>
-					<button class="my-cart-b"
-						onclick="javascript:location.href='http://watches.zak.kr/shop/item.php?it_id=1562430676'">Detail
-						view</button>
-				</div>
-			</li>
-			<li>
-				<div class="services-box">
-					<div>
-						<a href="http://watches.zak.kr/shop/item.php?it_id=1562430676"><img
-							src="http://watches.zak.kr/data/item/1562430676/thumb-1_380x266.jpg"
-							style="width: 100%;"></a>
-					</div>
-					<div class="best_title">
-						<h2>
-							<a href="http://watches.zak.kr/shop/item.php?it_id=1562430676">[TORSO]
-								토르소 심플 라인 메쉬 T23 (색상/ 남,녀 택1)</a>
-						</h2>
-					</div>
-					<div class="best_subtitle">
-						<span class="title-price">₩ 198,000</span> <span
-							class="title-price line-through">₩ <strike>198,000</strike></span>
-					</div>
-					<div class="product-info"></div>
-					<div class="sct_sns">
-						<div class="socials colors-icon">
-							<a href="#" class="facebook"><i class="fa fa-facebook"
-								aria-hidden="true"></i></a> <a href="#" class="twitter"><i
-								class="fa fa-twitter" aria-hidden="true"></i></a> <a href="#"
-								class="gplus"><i class="fa fa-google-plus"
-								aria-hidden="true"></i></a>
 
-						</div>
-					</div>
-					<button class="my-cart-b"
-						onclick="javascript:location.href='http://watches.zak.kr/shop/item.php?it_id=1562430676'">Detail
-						view</button>
-				</div>
-			</li>
-			<li>
-				<div class="services-box">
-					<div>
-						<a href="http://watches.zak.kr/shop/item.php?it_id=1562430676"><img
-							src="http://watches.zak.kr/data/item/1562430676/thumb-1_380x266.jpg"
-							style="width: 100%;"></a>
-					</div>
-					<div class="best_title">
-						<h2>
-							<a href="http://watches.zak.kr/shop/item.php?it_id=1562430676">[TORSO]
-								토르소 심플 라인 메쉬 T23 (색상/ 남,녀 택1)</a>
-						</h2>
-					</div>
-					<div class="best_subtitle">
-						<span class="title-price">₩ 198,000</span> <span
-							class="title-price line-through">₩ <strike>198,000</strike></span>
-					</div>
-					<div class="product-info"></div>
-					<div class="sct_sns">
-						<div class="socials colors-icon">
-							<a href="#" class="facebook"><i class="fa fa-facebook"
-								aria-hidden="true"></i></a> <a href="#" class="twitter"><i
-								class="fa fa-twitter" aria-hidden="true"></i></a> <a href="#"
-								class="gplus"><i class="fa fa-google-plus"
-								aria-hidden="true"></i></a>
 
-						</div>
-					</div>
-					<button class="my-cart-b"
-						onclick="javascript:location.href='http://watches.zak.kr/shop/item.php?it_id=1562430676'">Detail
-						view</button>
-				</div>
-			</li>
-			<li>
-				<div class="services-box">
-					<div>
-						<a href="http://watches.zak.kr/shop/item.php?it_id=1562430676"><img
-							src="http://watches.zak.kr/data/item/1562430676/thumb-1_380x266.jpg"
-							style="width: 100%;"></a>
-					</div>
-					<div class="best_title">
-						<h2>
-							<a href="http://watches.zak.kr/shop/item.php?it_id=1562430676">[TORSO]
-								토르소 심플 라인 메쉬 T23 (색상/ 남,녀 택1)</a>
-						</h2>
-					</div>
-					<div class="best_subtitle">
-						<span class="title-price">₩ 198,000</span> <span
-							class="title-price line-through">₩ <strike>198,000</strike></span>
-					</div>
-					<div class="product-info"></div>
-					<div class="sct_sns">
-						<div class="socials colors-icon">
-							<a href="#" class="facebook"><i class="fa fa-facebook"
-								aria-hidden="true"></i></a> <a href="#" class="twitter"><i
-								class="fa fa-twitter" aria-hidden="true"></i></a> <a href="#"
-								class="gplus"><i class="fa fa-google-plus"
-								aria-hidden="true"></i></a>
-
-						</div>
-					</div>
-					<button class="my-cart-b"
-						onclick="javascript:location.href='http://watches.zak.kr/shop/item.php?it_id=1562430676'">Detail
-						view</button>
-				</div>
-			</li>
-			<li>
-				<div class="services-box">
-					<div>
-						<a href="http://watches.zak.kr/shop/item.php?it_id=1562430676"><img
-							src="http://watches.zak.kr/data/item/1562430676/thumb-1_380x266.jpg"
-							style="width: 100%;"></a>
-					</div>
-					<div class="best_title">
-						<h2>
-							<a href="http://watches.zak.kr/shop/item.php?it_id=1562430676">[TORSO]
-								토르소 심플 라인 메쉬 T23 (색상/ 남,녀 택1)</a>
-						</h2>
-					</div>
-					<div class="best_subtitle">
-						<span class="title-price">₩ 198,000</span> <span
-							class="title-price line-through">₩ <strike>198,000</strike></span>
-					</div>
-					<div class="product-info"></div>
-					<div class="sct_sns">
-						<div class="socials colors-icon">
-							<a href="#" class="facebook"><i class="fa fa-facebook"
-								aria-hidden="true"></i></a> <a href="#" class="twitter"><i
-								class="fa fa-twitter" aria-hidden="true"></i></a> <a href="#"
-								class="gplus"><i class="fa fa-google-plus"
-								aria-hidden="true"></i></a>
-
-						</div>
-					</div>
-					<button class="my-cart-b"
-						onclick="javascript:location.href='http://watches.zak.kr/shop/item.php?it_id=1562430676'">Detail
-						view</button>
-				</div>
-			</li>
-			<li>
-				<div class="services-box">
-					<div>
-						<a href="http://watches.zak.kr/shop/item.php?it_id=1562430676"><img
-							src="http://watches.zak.kr/data/item/1562430676/thumb-1_380x266.jpg"
-							style="width: 100%;"></a>
-					</div>
-					<div class="best_title">
-						<h2>
-							<a href="http://watches.zak.kr/shop/item.php?it_id=1562430676">[TORSO]
-								토르소 심플 라인 메쉬 T23 (색상/ 남,녀 택1)</a>
-						</h2>
-					</div>
-					<div class="best_subtitle">
-						<span class="title-price">₩ 198,000</span> <span
-							class="title-price line-through">₩ <strike>198,000</strike></span>
-					</div>
-					<div class="product-info"></div>
-					<div class="sct_sns">
-						<div class="socials colors-icon">
-							<a href="#" class="facebook"><i class="fa fa-facebook"
-								aria-hidden="true"></i></a> <a href="#" class="twitter"><i
-								class="fa fa-twitter" aria-hidden="true"></i></a> <a href="#"
-								class="gplus"><i class="fa fa-google-plus"
-								aria-hidden="true"></i></a>
-
-						</div>
-					</div>
-					<button class="my-cart-b"
-						onclick="javascript:location.href='http://watches.zak.kr/shop/item.php?it_id=1562430676'">Detail
-						view</button>
-				</div>
-			</li>
-			<li>
-				<div class="services-box">
-					<div>
-						<a href="http://watches.zak.kr/shop/item.php?it_id=1562430676"><img
-							src="http://watches.zak.kr/data/item/1562430676/thumb-1_380x266.jpg"
-							style="width: 100%;"></a>
-					</div>
-					<div class="best_title">
-						<h2>
-							<a href="http://watches.zak.kr/shop/item.php?it_id=1562430676">[TORSO]
-								토르소 심플 라인 메쉬 T23 (색상/ 남,녀 택1)</a>
-						</h2>
-					</div>
-					<div class="best_subtitle">
-						<span class="title-price">₩ 198,000</span> <span
-							class="title-price line-through">₩ <strike>198,000</strike></span>
-					</div>
-					<div class="product-info"></div>
-					<div class="sct_sns">
-						<div class="socials colors-icon">
-							<a href="#" class="facebook"><i class="fa fa-facebook"
-								aria-hidden="true"></i></a> <a href="#" class="twitter"><i
-								class="fa fa-twitter" aria-hidden="true"></i></a> <a href="#"
-								class="gplus"><i class="fa fa-google-plus"
-								aria-hidden="true"></i></a>
-
-						</div>
-					</div>
-					<button class="my-cart-b"
-						onclick="javascript:location.href='http://watches.zak.kr/shop/item.php?it_id=1562430676'">Detail
-						view</button>
-				</div>
-			</li>
-			<li>
-				<div class="services-box">
-					<div>
-						<a href="http://watches.zak.kr/shop/item.php?it_id=1562430676"><img
-							src="http://watches.zak.kr/data/item/1562430676/thumb-1_380x266.jpg"
-							style="width: 100%;"></a>
-					</div>
-					<div class="best_title">
-						<h2>
-							<a href="http://watches.zak.kr/shop/item.php?it_id=1562430676">[TORSO]
-								토르소 심플 라인 메쉬 T23 (색상/ 남,녀 택1)</a>
-						</h2>
-					</div>
-					<div class="best_subtitle">
-						<span class="title-price">₩ 198,000</span> <span
-							class="title-price line-through">₩ <strike>198,000</strike></span>
-					</div>
-					<div class="product-info"></div>
-					<div class="sct_sns">
-						<div class="socials colors-icon">
-							<a href="#" class="facebook"><i class="fa fa-facebook"
-								aria-hidden="true"></i></a> <a href="#" class="twitter"><i
-								class="fa fa-twitter" aria-hidden="true"></i></a> <a href="#"
-								class="gplus"><i class="fa fa-google-plus"
-								aria-hidden="true"></i></a>
-
-						</div>
-					</div>
-					<button class="my-cart-b"
-						onclick="javascript:location.href='http://watches.zak.kr/shop/item.php?it_id=1562430676'">Detail
-						view</button>
-				</div>
-			</li>
-		
 
 			<!-- <li>
 				<div class="card mb-3">
@@ -326,10 +71,7 @@
 						<a href="http://watches.zak.kr/shop/item.php?it_id=1562430676"><img
 							src="http://watches.zak.kr/data/item/1562430676/thumb-1_380x266.jpg"
 							style="width: 100%;" alt="Card image"></a>
-						
-						
-						
-						
+	
 					<div class="card-body">
 						<p class="card-text">Some quick example text to build on the
 							card title and make up the bulk of the card's content.</p>
@@ -347,8 +89,6 @@
 				</div>
 			</li> -->
 		</ul>
-
-
 		<!-- <div class="card">
 			<div class="card-body">
 				<h4 class="card-title">Card title</h4>
@@ -359,15 +99,10 @@
 					class="card-link">Another link</a>
 			</div>
 		</div> -->
-
-
-
-
-
 	</div>
-	
+
 	<div class="clearfix"></div>
-	
+
 	<div class="center-block">
 		<ul class="pagination">
 			<li class="page-item disabled"><a class="page-link" href="#">&laquo;</a>
