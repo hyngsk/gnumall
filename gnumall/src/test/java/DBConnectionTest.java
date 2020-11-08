@@ -1,37 +1,28 @@
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@PropertySource("classpath:/properties/database.properties")
-@ContextConfiguration(locations = {"classpath:/root-context.xml"})
+import org.junit.Test;
+
 public class DBConnectionTest {
 
-	@Value("${driver}")
-	private String DRIVER;
-	@Value("${url}")
-	private String URL;
-	@Value("${user}")
-	private String USER;
-	@Value("${password}")
-	private String PW;
-
-	@Test
-	public void testConnection() throws Exception {
-
-		System.out.println(DRIVER + URL + USER + PW);
-		Class.forName(DRIVER);
-		try (Connection conn = DriverManager.getConnection(URL, USER, PW)) {
-			System.out.println("***************** SUCCESS ************** "+conn);
-		} catch (Exception e) {
-			e.getStackTrace();
-		}
-	}
+ private static final String DRIVER = "com.mysql.jdbc.Driver";
+ private static final String URL = "jdbc:mysql://gnumall.cl35yyhlsem3.us-east-1.rds.amazonaws.com:3306/gnumall"; // jdbc:mysql://127.0.0.1:3306/여러분이 만드신 스키마이름
+ private static final String USER = "admin"; //DB 사용자명
+ private static final String PW = "gnuvill1234";   //DB 사용자 비밀번호
+ 
+ @Test
+ public void testConnection() throws Exception{
+  Class.forName(DRIVER);
+  
+  try(Connection con = DriverManager.getConnection(URL, USER, PW)){
+   System.out.println("성공");
+   System.out.println(con);
+  }catch (Exception e) {
+   System.out.println("에러발생");
+   e.printStackTrace();
+  }
+ }
 
 }
