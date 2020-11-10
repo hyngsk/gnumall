@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+<mapper namespace="gnumall.board.dao.BoardDAO">
+
+	<select id="getBoardList" resultType="gnumall.board.model.BoardVO">
+		SELECT BOARD_SEQ,BOARD_WRITER,BOARD_SUBJECT,BOARD_CONTENT,BOARD_DATE
+		FROM board
+	</select>
+	
+	<select id="getBoardContent" resultType="gnumall.board.model.BoardVO">
+		SELECT BOARD_SEQ,BOARD_WRITER,BOARD_SUBJECT,BOARD_CONTENT,BOARD_DATE
+		FROM board
+		WHERE BOARD_SEQ = #{board_seq} 
+	</select>
+	
+	<insert id="insertBoard" parameterType = "gnumall.board.model.BoardVO">
+		INSERT INTO board(BOARD_WRITER,BOARD_SUBJECT,BOARD_CONTENT,BOARD_DATE)
+		VALUES(
+			#{board_writer}
+			,#{board_subject}
+			,#{board_content}
+			,now()
+		)
+	</insert>
+	
+	<update id="updateBoard" parameterType="gnumall.board.model.BoardVO">
+		UPDATE board SET
+			BOARD_WRITER = #{board_writer}
+			,BOARD_SUBJECT = #{board_subject}
+			,BOARD_CONTENT = #{board_content}
+			,BOARD_DATE = now()
+		WHERE
+			BOARD_SEQ = ${board_seq}
+	</update>
+	
+	<delete id="deleteBoard" parameterType="int">
+		DELETE FROM board
+		WHERE BOARD_SEQ = #{board_seq}
+	</delete>
+	
+	
+</mapper>
