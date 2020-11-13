@@ -5,21 +5,7 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 */
-h4, h5, h6,
-h1, h2, h3 {margin-top: 0;}
-ul, ol {margin: 0; list-style:none;}
-p {margin: 0;}
-html, body{
-   /*font-size: 100%;*/
-   background:#fff; 
-}
-body a{
-	transition:0.5s all;
-	-webkit-transition:0.5s all;
-	-moz-transition:0.5s all;
-	-o-transition:0.5s all;
-	-ms-transition:0.5s all;
-}
+
 .banner {
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -3176,9 +3162,9 @@ a.b-home {
 }
 
 .services-box .product-info {
-    position: relative;
+    position: inherit;
     overflow: hidden;
-    height: 34px;
+    height: 60px;
     color: #959595;
     font-size: 11px;
     margin-top: 8px;

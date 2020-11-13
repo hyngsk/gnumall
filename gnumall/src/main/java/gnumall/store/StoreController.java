@@ -1,22 +1,22 @@
 package gnumall.store;
 
-import gnumall.common.util.CamelMap;
-import gnumall.common.util.DataMap;
-import gnumall.common.util.HttpUtil;
-import gnumall.store.service.StoreService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import java.util.*;
-
+import gnumall.common.util.CamelMap;
+import gnumall.common.util.DataMap;
+import gnumall.common.util.HttpUtil;
+import gnumall.store.service.StoreService;
 
 @Controller
 public class StoreController {
@@ -28,11 +28,8 @@ public class StoreController {
 		this.storeService = storeService;
 	}
 
-
 	/*
-	상품 갯수(페이징 처리에 필요),
-	정보(실제로 보여주는 부분)
-	를 가져와 뷰로 전달하는 메소드
+	 * 상품 갯수(페이징 처리에 필요), 정보(실제로 보여주는 부분) 를 가져와 뷰로 전달하는 메소드
 	 */
 	@RequestMapping(value = "/store", method = RequestMethod.GET)
 	public String getProduct(Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -44,16 +41,12 @@ public class StoreController {
 		logger.info("{}", paramMap);
 
 		List<CamelMap> resultList = new ArrayList<CamelMap>();
-		
-		
-		
-		// 상품 갯수 가져오기
 
 		// 상품정보 받아오기
 		try {
 			resultList = storeService.showProduct();
 			logger.info("showProduct 쿼리 실행 결과 : ");
-			resultList.forEach((temp)->{
+			resultList.forEach((temp) -> {
 				logger.info("{}", temp);
 			});
 		} catch (Exception e) {

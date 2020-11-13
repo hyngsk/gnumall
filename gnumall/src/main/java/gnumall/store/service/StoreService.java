@@ -1,11 +1,11 @@
 package gnumall.store.service;
 
-import gnumall.common.util.CamelMap;
-import gnumall.store.mapper.StoreMapper;
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import gnumall.common.util.CamelMap;
+import gnumall.store.mapper.StoreMapper;
 
 @Service
 public class StoreService {

@@ -7,9 +7,9 @@
 
 	<div class="center-block col-md-offset-10">
 		<header>
+			<br />
 			<h2 class="col-lg-12 col-xs-12 text-left">
-				<a href="https://theme.sir.kr/youngcart5/shop/listtype.php?type=3">
-					Product list </a>
+				<a href="/store"> Product list </a>
 			</h2>
 		</header>
 
@@ -20,9 +20,9 @@
 			<li th:each="p: ${list}">
 				<div class="services-box">
 					<div>
-						<a href="http://watches.zak.kr/shop/item.php?it_id=1562430992">
-						<img th:src="*{'data:image/png;base64,'+ p.pThumnail}"
-							style="width: 100%;"></a>
+						<a th:href="@{/product/view/detail}"> <img
+							th:src="@{'/resources/image/' + ${p.pImgurl}}"
+							alt="Product picture" height="300" width="260"></a>
 					</div>
 					<div class="best_title">
 						<h2>
@@ -31,74 +31,27 @@
 						</h2>
 					</div>
 					<div class="best_subtitle">
-						<span th:if="${p.eventPrice} != null"  class="title-price">₩ <a
-							th:text=${p.eventPrice} class="title-price"></a> <span
+						<span th:if="${p.eventPrice} != null" class="title-price">₩
+							<a th:text=${p.eventPrice} class="title-price"></a> <span
 							class="title-price line-through">₩ <strike
 								th:text=${p.actualPrice}></strike>
 						</span>
-						</span> <span th:unless="${p.eventPrice} != null" class="title-price">₩ <a
-							th:text=${p.actualPrice} class="title-price"></a>
+						</span> <span th:unless="${p.eventPrice} != null" class="title-price">₩
+							<a th:text=${p.actualPrice} class="title-price"></a>
 						</span>
 					</div>
-					<div class="product-info">dfsdf</div>
-					<div class="sct_sns">
-						<div class="socials colors-icon">
-							<a href="#" class="facebook"><i class="fa fa-facebook"
-								aria-hidden="true"></i></a> <a href="#" class="twitter"><i
-								class="fa fa-twitter" aria-hidden="true"></i></a> <a href="#"
-								class="gplus"><i class="fa fa-google-plus"
-								aria-hidden="true"></i></a>
-
-						</div>
+					<div>
+						<a class="product-info" th:text=${p.pInfo}></a>
 					</div>
+					<br />
 					<button class="my-cart-b"
 						onclick="javascript:location.href='http://watches.zak.kr/shop/item.php?it_id=1562430992'">Detail
 						view</button>
 				</div>
 			</li>
 
-
-
-
-			<!-- <li>
-				<div class="card mb-3">
-					<h3 class="card-header">Card header</h3>
-					<div class="card-body">
-						<h5 class="card-title">Special title treatment</h5>
-						<h6 class="card-subtitle text-muted">Support card subtitle</h6>
-					</div>
-					
-						<a href="http://watches.zak.kr/shop/item.php?it_id=1562430676"><img
-							src="http://watches.zak.kr/data/item/1562430676/thumb-1_380x266.jpg"
-							style="width: 100%;" alt="Card image"></a>
-	
-					<div class="card-body">
-						<p class="card-text">Some quick example text to build on the
-							card title and make up the bulk of the card's content.</p>
-					</div>
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item">Cras justo odio</li>
-						<li class="list-group-item">Dapibus ac facilisis in</li>
-						<li class="list-group-item">Vestibulum at eros</li>
-					</ul>
-					<div class="card-body">
-						<a href="#" class="card-link">Card link</a> <a href="#"
-							class="card-link">Another link</a>
-					</div>
-					<div class="card-footer text-muted">2 days ago</div>
-				</div>
-			</li> -->
 		</ul>
-		<!-- <div class="card">
-			<div class="card-body">
-				<h4 class="card-title">Card title</h4>
-				<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-				<p class="card-text">Some quick example text to build on the
-					card title and make up the bulk of the card's content.</p>
-				<a href="#" class="card-link">Card link</a> <a href="#"
-					class="card-link">Another link</a>
-			</div>
-		</div> -->
+
 	</div>
 
 	<div class="clearfix"></div>

@@ -4,18 +4,19 @@
 
 <mapper namespace="gnumall.store.mapper.StoreMapper">
 
-    <select id="showProduct" resultType="cMap">
-        SELECT *
-        FROM product
-        WHERE 1 = 1
+	<select id="showProduct" resultType="cMap">
+		SELECT *
+		FROM product
+		WHERE 1 = 1
 
-    </select>
+	</select>
 
-    <select id="getItemCategory" resultType="cMap">
-        SELECT p_category
-        FROM product
-        WHERE 1 = 1
-        AND p_name = '상품 1'
-    </select>
+	<select id="getItemCategory" resultType="cMap">
+		SELECT p_category
+		FROM product
+		WHERE 1 = 1
+		AND p_name = '상품 1'
+	</select>
+
 
 </mapper>
