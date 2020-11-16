@@ -1,10 +1,52 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      data-layout-decorate="~{layout/default}" lang="ko">
-<div layout:fragment="content">
-<body>
-<h2>board list</h2>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	data-layout-decorate="~{layout/default}" lang="ko">
+
+<div class="container-fluid" layout:fragment="content">
+
+	<div class="center-block col-md-offset-10">
+		<header>
+			<h2 class="col-lg-12 col-xs-12 text-left">
+				<a href="https://theme.sir.kr/youngcart5/bbs/board.php?bo_table=new">
+					Board list </a>
+			</h2>
+		</header>
+		<table class="table" border="1" width=800>
+			<tr align="center">
+				<th>글번호</th>
+				<th>제목</th>
+				<th>내용</th>
+				<th>작성자</th>
+				<th>작성일</th>
+			</tr>
+			<tr th:each="board : ${boardList}" align="center">
+				<td th:text="${board.board_seq}"></td>
+				<td th:text="${board.board_subject}"></td>
+				<td th:text="${board.board_content}"></td>
+				<td th:text="${board.board_writer}"></td>
+				<td th:text="${#dates.format(board.board_date, 'yyyy-MM-dd')}"></td>	
+		</table>
+		
+		
+		<div class="row">
+        		<div class="col-auto mr-auto"></div>
+        		<div class="col-auto">
+            		<a class="btn btn-primary" th:href="@{/post}" role="button">글쓰기</a>
+        		</div>
+		</div>
 	
-</body>
+		<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+  		<div class="btn-group mr-2" role="group" aria-label="First group">
+    		<button type="button" class="btn btn-secondary">1</button>
+    		<button type="button" class="btn btn-secondary">2</button>
+    		<button type="button" class="btn btn-secondary">3</button>
+    		<button type="button" class="btn btn-secondary">4</button>
+  		</div>
+		
+		
 </div>
+</div>
+		
+
 </html>

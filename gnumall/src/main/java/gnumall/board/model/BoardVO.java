@@ -1,11 +1,14 @@
 package gnumall.board.model;
 
+import java.util.Date;
+
 public class BoardVO {
 	public int board_seq;
 	public String board_writer;
 	public String board_subject;
 	public String board_content;
-	public String board_date;
+	public Date board_date;
+	
 	public int getBoard_seq() {
 		return board_seq;
 	}
@@ -30,10 +33,13 @@ public class BoardVO {
 	public void setBoard_content(String board_content) {
 		this.board_content = board_content;
 	}
-	public String getBoard_date() {
+	public Date getBoard_date() {
 		return board_date;
 	}
-	public void setBoard_date(String board_date) {
+	public void setBoard_date(Date board_date) {
 		this.board_date = board_date;
 	}
+
+	
+	
 }
