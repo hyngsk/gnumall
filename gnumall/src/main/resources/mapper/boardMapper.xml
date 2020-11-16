@@ -2,10 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
         
-<mapper namespace="gnumall.board.dao.BoardDAO">
+<mapper namespace="gnumall.board.BoardMapper">
 
+    <!-- 조회 -->
 	<select id="getBoardList" resultType="gnumall.board.model.BoardVO">
-		SELECT BOARD_SEQ,BOARD_WRITER,BOARD_SUBJECT,BOARD_CONTENT,BOARD_DATE
+		SELECT *
 		FROM board
 	</select>
 	
@@ -15,7 +16,7 @@
 		WHERE BOARD_SEQ = #{board_seq} 
 	</select>
 	
-	<insert id="insertBoard" parameterType = "gnumall.board.model.BoardVO">
+	<insert id="insertBoard" parameterType="gnumall.board.model.BoardVO">
 		INSERT INTO board(BOARD_WRITER,BOARD_SUBJECT,BOARD_CONTENT,BOARD_DATE)
 		VALUES(
 			#{board_writer}
