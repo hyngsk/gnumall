@@ -39,7 +39,13 @@ public class BoardVO {
 	public void setBoard_date(Date board_date) {
 		this.board_date = board_date;
 	}
-
+	
+	@Override
+	public String toString() {
+		return "BoardVO [board_seq=" + board_seq + ", board_writer=" + board_writer + ", board_subject=" + board_subject
+				+ ", board_content=" + board_content + ", board_date=" + board_date + "]";
+	}
+	
 	
 	
 }
