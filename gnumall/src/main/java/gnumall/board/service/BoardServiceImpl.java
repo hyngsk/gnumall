@@ -20,6 +20,11 @@ public class BoardServiceImpl implements BoardService {
 		// TODO Auto-generated method stub
 		return boardDAO.getBoardList();
 	}
+	
+	
+	public int insertBoard(BoardVO boardVO) throws Exception {
+		return boardDAO.insertBoard(boardVO);
+	}
 
 }
 
